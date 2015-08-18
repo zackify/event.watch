@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "koa": "^0.21.0",
+    "koa-pg": "^0.24.1",
     "koa-router": "^5.1.2"
   }
 }
