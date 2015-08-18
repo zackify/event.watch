@@ -1,0 +1,15 @@
+{
+  "name": "eventwatch",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node  --harmony server/app.js"
+  },
+  "author": "Zach Silveira",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^0.21.0",
+    "koa-router": "^5.1.2"
+  }
+}
