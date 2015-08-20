@@ -1,6 +1,5 @@
-var expect = require('expect.js');
 var request = require('supertest');
-var app = require('../../../server/app.js');
+var app = require('../../../server/app');
 
 describe('Slack endpoint', function() {
   describe('#post', function () {
