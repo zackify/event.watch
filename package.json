@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node  --harmony server/app.js"
+    "start": "node  --harmony server/app.js",
+    "test": "mocha --recursive --harmony"
   },
   "author": "Zach Silveira",
   "license": "ISC",
@@ -15,5 +16,10 @@
     "koa-pg": "^0.24.1",
     "koa-router": "^5.1.2",
     "pg": "^4.4.1"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.2.5",
+    "supertest": "^1.0.1"
   }
 }
