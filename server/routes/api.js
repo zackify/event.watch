@@ -5,6 +5,6 @@ var koaBody = require('koa-body')()
 
 router.get('/', api.home)
 router.post('/new', koaBody, api.new) //later make this the json web token
-
+router.post('/slack', koaBody, api.slack)
 
 module.exports = router
