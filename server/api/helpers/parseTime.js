@@ -37,6 +37,7 @@ function parseNextDate(time){
 }
 
 module.exports = function(text, timezone){
+  moment().tz(timezone).format()
   var afterTime = text.match(/(?:pm|am)\s(.*)/) //the part after the time passed in
   if(afterTime) var time = text.replace(afterTime, '').toLowerCase().split(' ') //the time part of the string
   else var time = text.toLowerCase().split(' ')
