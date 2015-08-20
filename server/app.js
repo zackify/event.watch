@@ -6,7 +6,7 @@ var main = require('./routes/main');
 var api = require('./routes/api');
 
 app
-.use(koaPg('postgres://root@localhost:5432/eventwatch'))
+.use(koaPg(process.env.DATABASE_URL))
 .use(json())
 .use(api.routes())
 .use(main.routes())
