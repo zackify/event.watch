@@ -33,7 +33,7 @@ function parseNextDate(time, timezone){
   else if(time[3].match(/[0-9]/)) var hour = returnHour(time[3])
   else return false
 
-  return moment().day(dayOfWeek).startOf('day').hour(hour).tz(timezone).format()
+  return moment().tz(timezone).day(dayOfWeek).startOf('day').hour(hour).format()
 }
 
 module.exports = function(text, timezone){
