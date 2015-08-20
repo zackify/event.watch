@@ -1,7 +1,5 @@
 var request = require('supertest');
 var app = require('../../../server/app');
-var agent = require('supertest-koa-agent');
-agent(app)
 
 describe('Slack endpoint', function() {
   describe('#post', function () {
