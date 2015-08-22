@@ -1,14 +1,6 @@
 var request = require('supertest');
 var app = require('../../../server/app');
-var User = require('../../../server/models').User
-
-var test_account = User.create({
-  name: 'test',
-  email: 'test@test.com',
-  timezone: 'America/Los_Angeles',
-  password: 'blah',
-  slack_token: 'test_token'
-});
+var setup = require('../../setup.js')
 
 describe('Slack endpoint', function() {
   describe('#post', function () {

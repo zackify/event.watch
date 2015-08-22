@@ -1,8 +1,13 @@
-var getUser = require('./helpers/getUserFromToken')
 var parseTime = require('./helpers/parseTime')
+var User = require('../models').User
 
 module.exports = function *() {
-  var user = yield getUser.call(this)
+  var user = yield User.find({
+    where: {
+      slack_token: this.request.body.token
+    }
+  })
+
   if(!user) return this.body = "You must add your slack token ("+this.request.body.token+") to your <https://event.watch/account|event.watch account> before adding an event!"
 
   var event_time = parseTime(this.request.body.text, user.timezone)
