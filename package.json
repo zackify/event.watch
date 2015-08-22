@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node  --harmony server/app.js",
-    "test": "mocha --recursive --harmony"
+    "test": "sequelize db:migrate --url 'sqlite://test/db.sqlite' && mocha --recursive --harmony && sequelize db:migrate:undo --url 'sqlite://test/db.sqlite'",
+    "production": "sequelize --url $DATABASE_URL db:migrate && npm start"
   },
   "author": "Zach Silveira",
   "license": "ISC",
@@ -13,10 +14,13 @@
     "koa": "^0.21.0",
     "koa-body": "^1.2.1",
     "koa-json": "^1.1.1",
-    "koa-pg": "^0.24.1",
     "koa-router": "^5.1.2",
     "moment-timezone": "^0.4.0",
-    "pg": "^4.4.1"
+    "pg": "^4.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.6.0",
+    "sequelize-cli": "^1.7.4",
+    "sqlite3": "^3.0.10"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",

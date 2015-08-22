@@ -1,0 +1,7 @@
+{
+  "development": "postgres://root@localhost:5432/eventwatch_development",
+  "test": "sqlite://db.sqlite",
+  "production": {
+    "use_env_variable": "DATABASE_URL"
+  }
+}

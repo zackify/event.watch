@@ -1,6 +1,11 @@
+var User = require('../../models').User
+
 module.exports = function *(){
-  var result = yield this.pg.db.client.query_('SELECT * from users WHERE slack_token=$1', [this.request.body.token])
-  var user = result.rows[0]
+  var user = yield User.find({
+    where: {
+      slack_token: this.request.body.token
+    }
+  })
   if(user) return user
   return false
 }
