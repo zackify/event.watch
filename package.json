@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "sequelize --url $DATABASE_URL db:migrate && node  --harmony server/app.js",
-    "test": "sequelize db:migrate --url 'postgres://ubuntu@localhost:5432/circle_test' && mocha --recursive --harmony"
+    "start": "node  --harmony server/app.js",
+    "test": "sequelize db:migrate --url 'postgres://ubuntu@localhost:5432/circle_test' && mocha --recursive --harmony",
+    "testlocal": "mocha --recursive --harmony"
   },
   "author": "Zach Silveira",
   "license": "ISC",
