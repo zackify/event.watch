@@ -1,8 +1,8 @@
 var Sequelize = require('sequelize')
 var config = require('../../config/config.json')
 var env = config[process.env.NODE_ENV || 'development']
-
-var sequelize = new Sequelize(env)
+if(process.env.NODE_ENV == 'production') var sequelize = new Sequelize(process.env.DATABASE_URL)
+else var sequelize = new Sequelize(env)
 var User = sequelize.define('User', {
   name: {
     type: Sequelize.STRING,
