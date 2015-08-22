@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node  --harmony server/app.js",
-    "test": "sequelize db:migrate --url 'sqlite://test/db.sqlite' && mocha --recursive --harmony && sequelize db:migrate:undo --url 'sqlite://test/db.sqlite'",
+    "test": "sequelize db:migrate --url 'postgres://ubuntu@localhost:5432/circle_test' && mocha --recursive --harmony",
     "production": "sequelize --url $DATABASE_URL db:migrate && npm start"
   },
   "author": "Zach Silveira",

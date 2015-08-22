@@ -1,6 +1,6 @@
 {
   "development": "postgres://root@localhost:5432/eventwatch_development",
-  "test": "sqlite://db.sqlite",
+  "test": "postgres://ubuntu@localhost:5432/circle_test",
   "production": {
     "use_env_variable": "DATABASE_URL"
   }
