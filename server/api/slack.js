@@ -1,6 +1,7 @@
 var ParseMessage = require('./helpers/parseMessage')
 var User = require('../models').User
 var Event = require('../models').Event
+var schedule = require('./helpers/scheduleEvent')
 
 module.exports = function *() {
   if(!this.request.body.user_name) return this.body = "something went wrong"
@@ -24,4 +25,10 @@ module.exports = function *() {
     description: message.text
   })
   this.body = "Cool! We'll remind you an hour before the event :)'
+  
+  schedule({
+    text: message.text,
+    channel: slack_channel,
+    hook: user.slack_hook
+  })
 }
