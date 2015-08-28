@@ -5,9 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     slack_channel:  {
       type: DataTypes.STRING,
-      validate: {
-        allowNull: true
-      }
+      allowNull: true
     },
     description: {
       type: DataTypes.TEXT,
@@ -15,9 +13,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     location: {
       type: DataTypes.TEXT,
-      validate: {
-        allowNull: true
-      }
+      allowNull: true
     }
   })
 }
