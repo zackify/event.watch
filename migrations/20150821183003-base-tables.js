@@ -33,16 +33,16 @@ module.exports = {
         timezone: {
           type: Sequelize.STRING,
         },
+        slack_hook: {
+          type: Sequelize.STRING,
+          allowNull: true
+        },
         createdAt: {
           type: Sequelize.DATE
         },
         updatedAt: {
           type: Sequelize.DATE
         }
-      },
-      {
-        engine: 'MYISAM', // default: 'InnoDB'
-        charset: 'latin1' // default: null
       }
     )
 
@@ -55,14 +55,17 @@ module.exports = {
           primaryKey: true,
           type: Sequelize.INTEGER
         },
+        UserId: {
+          allowNull: false,
+          primaryKey: true,
+          type: Sequelize.INTEGER
+        },
         event_time:  {
           type: Sequelize.DATE
         },
         slack_channel:  {
           type: Sequelize.STRING,
-          validate: {
-            allowNull: true
-          }
+          allowNull: true
         },
         description: {
           type: Sequelize.TEXT,
@@ -78,10 +81,6 @@ module.exports = {
         updatedAt: {
           type: Sequelize.DATE
         }
-      },
-      {
-        engine: 'MYISAM', // default: 'InnoDB'
-        charset: 'latin1' // default: null
       }
     )
   },

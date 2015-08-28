@@ -33,7 +33,7 @@ function parseNextDate(time, timezone){
   else if(time[3].match(/[0-9]/)) var hour = returnHour(time[3])
   else return false
 
-  return moment().tz(timezone).day(dayOfWeek).startOf('day').hour(hour).format()
+  return moment().tz(timezone).day(dayOfWeek).startOf('day').hour(hour).utc().format()
 }
 
 module.exports = function(text, timezone){
@@ -41,6 +41,13 @@ module.exports = function(text, timezone){
   if(afterTime) var time = text.replace(afterTime, '').toLowerCase().split(' ') //the time part of the string
   else var time = text.toLowerCase().split(' ')
 
-  if(time[0] == 'next') return parseNextDate(time, timezone)
-
+  if(time[0] == 'next') var date = parseNextDate(time, timezone)
+  if(afterTime) return {
+    date: date,
+    text: afterTime[1]
+  }
+  else return {
+    date: date,
+    text: null
+  }
 }
