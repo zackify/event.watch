@@ -24,8 +24,8 @@ module.exports = function *() {
     slack_channel: slack_channel,
     description: message.text
   })
-  this.body = "Cool! We'll remind you an hour before the event :)'
-  
+  this.body = "Cool! We'll remind you an hour before the event :)"
+
   schedule({
     text: message.text,
     channel: slack_channel,
