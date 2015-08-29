@@ -5,11 +5,6 @@ services:
 before_script:
   - 'npm install'
 
-stages:
-  - build
-  - test
-  - deploy
-
 job1:
   stage: test
   script:
