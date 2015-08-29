@@ -1,0 +1,26 @@
+image: node:0.12.7
+services:
+  - postgres
+
+before_script:
+  - 'npm install'
+
+stages:
+  - build
+  - test
+  - deploy
+
+job1:
+  stage: test
+  script:
+    - "npm test"
+  only:
+    - master
+  tags:
+    - docker
+  variables:
+    DATABASE_URL: "postgres://postgres@postgres/my_database"
+
+  variables:
+    POSTGRES_DB: gitlab
+    POSTGRES_PASSWORD: ''
