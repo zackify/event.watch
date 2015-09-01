@@ -1,3 +1,7 @@
+##Not finished
+
+I stopped working on this due to there being google calendar and other integrations
+
 ##Install
 
 - git clone
